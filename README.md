@@ -1,2 +1,1 @@
 # lotto
-test task
