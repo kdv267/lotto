@@ -43,6 +43,8 @@
     justify-content: center;
 }
 
+
+
 .button{
     border-radius: 30px;
     border: 1px solid black;
@@ -50,6 +52,15 @@
     font-weight: 300;
     font-size: 14px;
     width: 50%;
+}
+
+.button:hover{
+    background-color: ghostwhite;
+    cursor: pointer;
+}
+.button:active{
+    background-color: #FFD205;
+    cursor: pointer;
 }
 
 .title {
@@ -81,9 +92,6 @@
     border: none;
 }
 
-.wand{
-
-}
 
 .wand:hover {
    border: 1px solid grey;
