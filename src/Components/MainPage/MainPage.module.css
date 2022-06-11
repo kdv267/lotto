@@ -1,0 +1,104 @@
+.container {
+    background: linear-gradient(180deg, #4568DC, #B06AB3);
+    width: 800px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.block {
+    margin-top: 60px;
+    background-color: #FFFFFF;
+    height: 500px;
+    width: 500px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.mainfield {
+    display: flex;
+    /*border: 2px solid black;*/
+    height: 45%;
+    width: 90%;
+    margin: 10px 10px 0px 10px;
+    flex-direction: column;
+}
+
+.subfield {
+    display: flex;
+    /*border: 2px solid black;*/
+    height: 20%;
+    width: 90%;
+    margin: 10px;
+    flex-direction: column;
+}
+.resultButton {
+    display: flex;
+    height: 10%;
+    width: 90%;
+    margin: 10px;
+    justify-content: center;
+}
+
+.button{
+    border-radius: 30px;
+    border: 1px solid black;
+    background-color: white;
+    font-weight: 300;
+    font-size: 14px;
+    width: 50%;
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*border: 2px solid black;*/
+    height: 5%;
+    width: 90%;
+    margin: 0px 20px 0px 20px
+}
+
+.field {
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    /*border: 1px solid greenyellow;*/
+}
+
+.ticket {
+    font-weight: bold;
+    margin-left: 25px;
+}
+
+.wandBut {
+    background-color: white;
+    border: none;
+}
+
+.wand{
+
+}
+
+.wand:hover {
+   border: 1px solid grey;
+    border-radius: 3px;
+}
+.row {
+    display: flex;
+    flex-direction: row;
+    margin-left: 25px;
+}
+.titleField {
+    font-weight: 400;
+}
+
+.rules {
+    font-weight: 300;
+    margin-left: 20px;
+}

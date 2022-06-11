@@ -1,6 +1,6 @@
 .none{
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
     border-radius: 3px;
     border: 1px solid black;
     font-size: 12px;
@@ -14,16 +14,20 @@
 }
 
 .active{
-    height: 30px;
-    width: 30px;
+    height: 40px;
+    width: 40px;
     border-radius: 3px;
     border: 1px solid black;
     font-size: 12px;
-    color: red;
+    background-color:#FFD205 ;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     margin: 4px;
     font-size: 16px;
+}
+
+.none:hover{
+    background-color:ghostwhite;
 }

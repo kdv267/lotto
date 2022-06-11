@@ -1,11 +1,15 @@
-
-import './App.css';
-import Field from "./Components/Field/Field";
+import MainPage from "./Components/MainPage/MainPage";
+import './App.css'
 
 function App() {
   return (
       <>
-        <Field/>
+          <header >
+              {/*<Nav />*/}
+          </header>
+          <main>
+              <MainPage/>
+          </main>
       </>
   )
 }
