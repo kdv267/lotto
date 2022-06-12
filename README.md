@@ -6,7 +6,7 @@
 
 
 ## Используемые технологии:
-React, Redux-toolkit, axios, axios-retry
+#### React, Redux-toolkit, axios, axios-retry
 
 ## Основной функционал приложения
 
@@ -18,13 +18,13 @@ React, Redux-toolkit, axios, axios-retry
 
 ### Выбраны все необходимые числа. 
 
-Кнопка 'Посмотреть результат' стала активной
+Кнопка `Посмотреть результат` стала активной
 
 <img src='https://github.com/kdv267/lotto/blob/main/screenshots/XR%20cheked.png' width='300' height='600'/>
 
 ### Выбрано бОльшее количество чисел. 
 
- Кнопка 'Посмотреть результат' стала неактивной
+ Кнопка `Посмотреть результат` стала неактивной
 
 <img src='https://github.com/kdv267/lotto/blob/main/screenshots/XR%20more%20than%20need.png' width='300' height='600'/>
 
@@ -43,4 +43,5 @@ React, Redux-toolkit, axios, axios-retry
 
 Реализована возможность генерация случайного выбора чисел при нажатии на кнопку в верхнем правом углу.
 
-Адаптивная Modile-first верстка (стили разработы с использованием display flex (Варианты отображения для разных устройств можете найти в папке /screenshots)
+Адаптивная Modile-first верстка (стили разработы с использованием display flex 
+(Варианты отображения для разных устройств можете найти в папке `/screenshots`)
