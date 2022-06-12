@@ -16,12 +16,27 @@ React, Redux-toolkit, axios, axios-retry
 
 
 
-### Выбраны все необходимые числа
-#### Кнопка 'Посмотреть результаты' стала активной
+### Выбраны все необходимые числа. 
+
+Кнопка 'Посмотреть результат' стала активной
 
 <img src='https://github.com/kdv267/lotto/blob/main/screenshots/XR%20cheked.png' width='300' height='600'/>
 
-### Выбрано бОльшее количество чисел
-#### Кнопка 'Посмотреть результаты' стала неактивной
+### Выбрано бОльшее количество чисел. 
+
+ Кнопка 'Посмотреть результат' стала неактивной
 
 <img src='https://github.com/kdv267/lotto/blob/main/screenshots/XR%20more%20than%20need.png' width='300' height='600'/>
+
+### Страница с результатами. 
+При открытии страницы происходит отправка данных по указанному адресу.
+
+<img src='https://github.com/kdv267/lotto/blob/main/screenshots/XR%20win.png' width='300' height='600'/>
+
+
+### Отправка данных не удалась
+Приложение пытается отправить данные на сервер 3 раза с интервалом в 2 секунды. После неудачных попыток выводит ошибку. 
+
+<img src='https://github.com/kdv267/lotto/blob/main/screenshots/XR%20failed.png' width='300' height='600'/>
+
+
