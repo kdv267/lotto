@@ -6,13 +6,13 @@ let checked = false
 
 const Cell = ({type,number}) => {
 
-	const arr = useSelector(state => state.field.field)
+	const arr = useSelector(state => state.field.field.selectedNumber)
 
 
 	if (type === 'first') {
-		checked = arr.first.includes(number)
+		checked = arr.firstField.includes(number)
 	} else{
-		checked = arr.second.includes(number)
+		checked = arr.secondField.includes(number)
 	}
 
 

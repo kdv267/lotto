@@ -8,12 +8,14 @@ const Field = ({type,field}) => {
 
 	const dispatch = useDispatch()
 
-	const firstArr = useSelector(state => state.field.field.first)
-	const secondArr = useSelector(state => state.field.field.second)
+	const firstArr = useSelector(state => state.field.field.selectedNumber.firstField)
+	const secondArr = useSelector(state => state.field.field.selectedNumber.secondField)
 
-
+	//Обработчик события при нажатии на цифру
 	const checkNum =(event) => {
 		const newNum = +event.target.name
+
+		if (event.target.type === 'submit'){
 		if (type === 'first'){
 			if (firstArr.includes(newNum)) {
 				dispatch(removeNumber({newNum,type}))
@@ -27,6 +29,7 @@ const Field = ({type,field}) => {
 				dispatch(addNumber({newNum,type}))
 			}
 		}
+	}
 	}
 
 
