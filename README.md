@@ -12,12 +12,16 @@ React, Redux-toolkit, axios, axios-retry
 
 ### Главная страница (на iPhone XR)
 
-<img src='https://github.com/kdv267/lotto/blob/main/screenshots/XR%20uncheked.png' width='300' height='500'/>
+<img src='https://github.com/kdv267/lotto/blob/main/screenshots/XR%20uncheked.png' width='300' height='600'/>
 
 
 
 ### Выбраны все необходимые числа
 #### Кнопка 'Посмотреть результаты' стала активной
 
-<img src='https://github.com/kdv267/lotto/blob/main/screenshots/XR%20cheked.png' width='300' height='500'/>
+<img src='https://github.com/kdv267/lotto/blob/main/screenshots/XR%20cheked.png' width='300' height='600'/>
 
+### Выбрано бОльшее количество чисел
+#### Кнопка 'Посмотреть результаты' стала неактивной
+
+<img src='https://github.com/kdv267/lotto/blob/main/screenshots/XR%20more%20than%20need.png' width='300' height='600'/>
