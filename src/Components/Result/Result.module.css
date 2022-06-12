@@ -7,10 +7,10 @@
 }
 
 .block {
-    margin-top: 60px;
+    margin:auto;
     background-color: #FFFFFF;
-    height: 500px;
-    width: 500px;
+    height: 80%;
+    width: 90%;
     border-radius: 10px;
     display: flex;
     justify-content: center;
@@ -42,19 +42,23 @@
 }
 .button:active{
     background-color: #FFD205;
-    cursor: pointer;
 }
 
 .title {
     display: flex;
     justify-content: center;
     align-items: center;
-    /*border: 2px solid black;*/
     height: 5%;
     width: 90%;
     font-weight: bold;
     margin-bottom: 40px;
 }
 
+.answer {
+    margin-top: 40px;
+}
+.error{
+    font-size: 14px;
+}
 
 

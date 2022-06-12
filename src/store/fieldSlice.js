@@ -1,5 +1,28 @@
-import {createSlice} from "@reduxjs/toolkit";
+import {createSlice, createAsyncThunk} from "@reduxjs/toolkit";
 
+import axios from "axios";
+import axiosRetry from "axios-retry";
+
+//Запрос на случайный адрес повторяющийся 3 раза с интервалом в 2 секунды
+export const axiosField = createAsyncThunk(
+	'field/axiosField',
+	async function (arr,{rejectWithValue,dispatch,getState}) {
+		const result = getState().field.field
+		console.log(result)
+		axiosRetry(axios, {
+			retries: 2,
+			shouldResetTimeout: true,
+			retryDelay: () => 2000,
+			retryCondition: (_error) => true,
+		})
+		try {
+			const response = await axios.post('https://jsonplaceholder.typicode.com/uewvsers',result)
+		} catch (error) {
+			return rejectWithValue(error.response.status)
+		}
+		
+	}
+)
 
 const fieldSlice = createSlice({
 	name: 'field',
@@ -10,7 +33,9 @@ const fieldSlice = createSlice({
 				secondField: []
 			},
 			isTicketWon:false
-		}
+		},
+		status:null,
+		error:null,
 	},
 
 	reducers: {
@@ -40,12 +65,13 @@ const fieldSlice = createSlice({
 			}
 		},
 		sendResult(state, action) {
+			console.log(action.payload)
 			state.field = {
 				selectedNumber: {
-					firstField: action.payload.arr.firstField,
-					secondField: action.payload.arr.secondField
+					firstField: action.payload.selectedNumber.firstField,
+					secondField: action.payload.selectedNumber.secondField
 				},
-				isTicketWon:action.payload.totalScore
+				isTicketWon:action.payload.isTicketWon
 			}
 		},
 		clearField(state, action) {
@@ -57,6 +83,19 @@ const fieldSlice = createSlice({
 				isTicketWon:false
 			}
 		}
+	},
+	extraReducers: {
+		[axiosField.pending]: (state) => {
+			state.status = 'loading'
+			state.error = null
+		},
+		[axiosField.fulfilled]: (state) => {
+			state.status = 'resolved'
+		},
+		[axiosField.rejected]: (state,action) => {
+			state.status = 'rejected';
+			state.error = action.payload
+		},
 	}
 })
 

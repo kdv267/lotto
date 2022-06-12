@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import styles from './Field.module.css'
 import Cell from "../Cell/Cell";
 import {useDispatch, useSelector} from "react-redux";
@@ -8,22 +8,22 @@ const Field = ({type,field}) => {
 
 	const dispatch = useDispatch()
 
-	const firstArr = useSelector(state => state.field.field.selectedNumber.firstField)
-	const secondArr = useSelector(state => state.field.field.selectedNumber.secondField)
+	const {firstField, secondField} = useSelector(state => state.field.field.selectedNumber)
 
-	//Обработчик события при нажатии на цифру
+
+	//Обработчик событий при нажатии на кнопку с числом
 	const checkNum =(event) => {
 		const newNum = +event.target.name
 
 		if (event.target.type === 'submit'){
 		if (type === 'first'){
-			if (firstArr.includes(newNum)) {
+			if (firstField.includes(newNum)) {
 				dispatch(removeNumber({newNum,type}))
 			} else{
 				dispatch(addNumber({newNum,type}))
 			}
 		} else {
-			if (secondArr.includes(newNum)) {
+			if (secondField.includes(newNum)) {
 				dispatch(removeNumber({newNum,type}))
 			} else{
 				dispatch(addNumber({newNum,type}))

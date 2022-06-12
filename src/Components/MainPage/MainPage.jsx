@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import styles from './MainPage.module.css'
 import Field from "../Field/Field";
-import {randomNumber, sendResult} from "../../store/fieldSlice";
+import {axiosField, randomNumber, sendResult} from "../../store/fieldSlice";
 import {useDispatch, useSelector} from "react-redux";
 import {getRandomField} from "./randomField";
 import {Link} from "react-router-dom";
@@ -11,26 +11,34 @@ const firstFieldArr = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
 const secondFieldArr = [1,2]
 
 const MainPage = () => {
-
 	const dispatch = useDispatch()
+	const {firstField, secondField} = useSelector(state => state.field.field.selectedNumber)
 
-	const arr = useSelector(state => state.field.field.selectedNumber)
-
+	//Состояние хранящее правильность выбора количества чисел
 	const [fieldValid, setFieldValid] = useState(false)
+
 	//Сравнение отмеченных чисел со случайно сгенерированным полем
 	const showResult = () => {
-	const result = getRandomField()
+	const randomField = getRandomField()
 
-	const firstRes = (result.first.filter((el) => {
-			return arr.firstField.indexOf(el) !== -1
+	//Определяем количество совпадающих элементов в первом поле
+	const firstRes = (randomField.first.filter((el) => {
+			return firstField.indexOf(el) !== -1
+		})).length
+	//Определяем количество совпадающих элементов во втором поле
+	const secondRes = (randomField.second.filter((el) => {
+			return secondField.indexOf(el) !== -1
 		})).length
 
-	const secondRes = (result.second.filter((el) => {
-			return arr.secondField.indexOf(el) !== -1
-		})).length
-
-	const totalScore = (firstRes + secondRes >= 4)
-	dispatch(sendResult({arr, totalScore}))
+	const result = {
+		selectedNumber: {
+			firstField,
+			secondField,
+		},
+		isTicketWon:(firstRes + secondRes >= 4)
+	}
+	dispatch(sendResult(result))
+	dispatch(axiosField())
 	}
 
 	//Генерация случайных чисел для игры
@@ -40,19 +48,19 @@ const MainPage = () => {
 	}
 
 	//Проверка на количество отмеченных полей
-	const validate = (arr) => {
-		if (arr.firstField.length === 8 && arr.secondField.length === 1 ){
+	const validate = (first,second) => {
+		if (first.length === 8 && second.length === 1 ){
 			setFieldValid(true)
 		} else {
 			setFieldValid(false)
 		}
 	}
-	const firstNum =  arr.firstField.length
-	const secondNum = arr.secondField.length
+	const firstNum =  firstField.length
+	const secondNum = secondField.length
 
 	useEffect(() => {
-		validate(arr)
-	},[arr])
+		validate(firstField,secondField)
+	},[firstField,secondField])
 
 	return (
 		<>
@@ -83,7 +91,7 @@ const MainPage = () => {
 						<p className={styles.titleField}>Поле 2</p> <p className={styles.rules}>
 						{     secondNum === 1 ?
 							`Выбор сделан`:
-							'Отметьте только одно число'
+							'Выберите одно число'
 						}
 					</p>
 					</div>

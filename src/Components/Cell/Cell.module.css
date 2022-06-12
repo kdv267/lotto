@@ -1,9 +1,8 @@
 .none{
-    height: 40px;
-    width: 40px;
+    height: 5vh;
+    width: 5vh;
     border-radius: 3px;
     border: 1px solid black;
-    font-size: 12px;
     color: black;
     display: flex;
     align-items: center;
@@ -14,11 +13,10 @@
 }
 
 .active{
-    height: 40px;
-    width: 40px;
+    height: 5vh;
+    width: 5vh;
     border-radius: 3px;
     border: 1px solid black;
-    font-size: 12px;
     background-color:#FFD205 ;
     display: flex;
     align-items: center;
