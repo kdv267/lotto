@@ -8,6 +8,6 @@
 ## Используемые технологии:
 React, Redux-toolkit, axios, axios-retry
 
-##Основной функционал приложения
+## Основной функционал приложения
 
 <img src='https://github.com/kdv267/lotto/blob/main/screenshots/XR%20uncheked.png' width='300' height='500'/>
