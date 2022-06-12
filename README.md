@@ -34,7 +34,7 @@
 <img src='https://github.com/kdv267/lotto/blob/main/screenshots/XR%20win.png' width='300' height='600'/>
 
 
-### Отправка данных не удалась
+### Отправка данных не удалась. 
 Приложение пытается отправить данные на сервер 3 раза с интервалом в 2 секунды. После неудачных попыток выводит ошибку. 
 
 <img src='https://github.com/kdv267/lotto/blob/main/screenshots/XR%20failed.png' width='300' height='600'/>
