@@ -10,4 +10,14 @@ React, Redux-toolkit, axios, axios-retry
 
 ## Основной функционал приложения
 
+### Главная страница (на iPhone XR)
+
 <img src='https://github.com/kdv267/lotto/blob/main/screenshots/XR%20uncheked.png' width='300' height='500'/>
+
+
+
+### Выбраны все необходимые числа
+#### Кнопка 'Посмотреть результаты' стала активной
+
+<img src='https://github.com/kdv267/lotto/blob/main/screenshots/XR%20cheked.png' width='300' height='500'/>
+
